@@ -5,16 +5,22 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "ts-node-dev src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:prisma-migration": "prisma migrate dev --name init && prisma generate"
+  },
+  "prisma": {
+    "schema": "src/implementations/prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "prisma": "^5.7.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@prisma/client": "^5.7.1",
     "dotenv": "^16.3.1"
   }
 }

@@ -20,9 +20,9 @@ export class LibraryManager {
   }
 
   async getBookFromLibrary(bookToFind: BookToFind): Promise<Book> {
-    const book: Book | undefined = await this.bookRepository.byName(bookToFind.name);
+    const book: Book | null = await this.bookRepository.byName(bookToFind.name);
 
-    if (typeof book === 'undefined') {
+    if (!book) {
       throw new BookNotFoundError(bookToFind);
     }
 

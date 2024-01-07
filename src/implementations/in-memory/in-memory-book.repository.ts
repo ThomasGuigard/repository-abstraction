@@ -17,8 +17,10 @@ export class InMemoryBookRepository implements IBookRepository {
     return Promise.resolve(books);
   }
 
-  byName(name: string): Promise<Book | undefined> {
+  byName(name: string): Promise<Book | null> {
     const book: Book | undefined = Array.from(this._books).find(book => book.name === name);
+
+    if (typeof book === "undefined") return Promise.resolve(null);
 
     return Promise.resolve(book);
   }
