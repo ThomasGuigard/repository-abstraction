@@ -28,6 +28,11 @@ Here we define all terms that may be used in the applicative domain
 
 # Technical Data
 
+![img.png](doc/class-diagram.png)
+
+Our application will have a main class, LibraryManager, who will manage all actions related to our books. LibraryManager will
+have a book repository to let it get a book, add a book or get all books.
+
 Our app is structured following hexagonal architecture principles.
 
 Meaning we expose our application through primary ports and let her consume services through secondary ports.
@@ -35,6 +40,8 @@ Meaning we expose our application through primary ports and let her consume serv
 We have here one secondary port : IBookRepository which can be connected to various datasource providers
 
 We have only one primary port implemented : console-app.
+
+
 
 # How to start project
 

@@ -6,7 +6,7 @@ import {Entity, PrimaryKey, Property} from "@mikro-orm/core";
 export class BookEntity {
 
   @PrimaryKey()
-  _id!: number;
+  id!: number;
 
   @Property()
   name!: string;

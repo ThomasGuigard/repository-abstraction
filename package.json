@@ -10,12 +10,12 @@
     "db:mikro-orm-migration": "mikro-orm schema:update --run"
   },
   "prisma": {
-    "schema": "src/implementations/prisma/schema.prisma"
+    "schema": "src/infrastructure/secondary/prisma/schema.prisma"
   },
   "mikro-orm": {
     "useTsNode": true,
     "configPaths": [
-      "./src/implementations/mikro-orm/mikro-orm.config.ts",
+      "./src/infrastructure/secondary/mikro-orm/mikro-orm.config.ts",
       "./dist/mikro-orm.config.js"
     ]
   },
