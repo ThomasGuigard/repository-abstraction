@@ -1,4 +1,4 @@
-import {Book, Books, IBookRepository} from "../../domain/books";
+import {Book, Books, IBookRepository} from "../../../domain/books";
 import {PrismaClient} from "@prisma/client";
 
 export class PrismaBookRepository implements IBookRepository {

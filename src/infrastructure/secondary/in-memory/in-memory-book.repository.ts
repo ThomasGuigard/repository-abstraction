@@ -1,6 +1,4 @@
-import {IBookRepository} from "../../domain/books/book.repository";
-import {Book} from "../../domain/books/book";
-import {Books} from "../../domain/books/books";
+import {Book, Books, IBookRepository} from "../../../domain/books";
 
 export class InMemoryBookRepository implements IBookRepository {
   private _books = new Set<Book>;

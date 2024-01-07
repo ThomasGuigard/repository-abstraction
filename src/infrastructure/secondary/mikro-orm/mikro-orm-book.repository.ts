@@ -1,7 +1,7 @@
 import {MikroOrmClient} from "./mikro-orm-client";
-import {Book, Books, IBookRepository} from "../../domain/books";
 import {BookEntity} from "./entities/book-entity";
 import {EntityRepository} from "@mikro-orm/core";
+import {Book, Books, IBookRepository} from "../../../domain/books";
 
 export class MikroOrmBookRepository implements IBookRepository {
   private _bookRepository:  EntityRepository<BookEntity>;

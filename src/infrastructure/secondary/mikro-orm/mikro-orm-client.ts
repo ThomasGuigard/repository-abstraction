@@ -1,6 +1,6 @@
 import {EntityManager, MikroORM} from "@mikro-orm/core";
-import {MissingEnvVariableError} from "../../shared/errors/missing-env-variable.error";
 import config from "./mikro-orm.config";
+import {MissingEnvVariableError} from "../../../shared/errors/missing-env-variable.error";
 
 export class MikroOrmClient {
   private _entityManager: EntityManager;

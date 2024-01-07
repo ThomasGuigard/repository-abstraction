@@ -1,9 +1,9 @@
 import {DatasourceTypeEnum} from "./enums/datasource-type.enum";
-import {MissingEnvVariableError} from "../errors/missing-env-variable.error";
-import {IBookRepository} from "../../domain/books";
-import {InMemoryBookRepository} from "../../repositories-implementations/in-memory";
-import {PrismaBookRepository} from "../../repositories-implementations/prisma";
-import {MikroOrmBookRepository, getMikroOrmClient} from "../../repositories-implementations/mikro-orm";
+import {IBookRepository} from "../../../../domain/books";
+import {InMemoryBookRepository} from "../../../secondary/in-memory";
+import {PrismaBookRepository} from "../../../secondary/prisma";
+import {getMikroOrmClient, MikroOrmBookRepository} from "../../../secondary/mikro-orm";
+import {MissingEnvVariableError} from "../../../../shared/errors/missing-env-variable.error";
 
 const loadDependencies = async () => {
   if (!process.env.BOOK_REPOSITORY_DATASOURCE) {
