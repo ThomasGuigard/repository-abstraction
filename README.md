@@ -68,3 +68,4 @@ https://www.prisma.io/docs
 
 # TODO
 - Maybe add acceptance tests with cucumber
+- Add faker to generate data
