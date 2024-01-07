@@ -1,6 +1,4 @@
-import {IBookRepository} from "../domain/books/book.repository";
-import {Book} from "../domain/books/book";
-import {Books} from "../domain/books/books";
+import {Book, Books, IBookRepository} from "../domain/books";
 import {BookToAdd} from "./book-to-add";
 import {BookToFind} from "./book-to-find";
 import {BookNotFoundError} from "./errors/book-not-found.error";

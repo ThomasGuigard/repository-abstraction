@@ -1,7 +1,5 @@
 import {MikroOrmClient} from "./mikro-orm-client";
-import {IBookRepository} from "../../domain/books/book.repository";
-import {Book} from "../../domain/books/book";
-import {Books} from "../../domain/books/books";
+import {Book, Books, IBookRepository} from "../../domain/books";
 import {BookEntity} from "./entities/book-entity";
 import {EntityRepository} from "@mikro-orm/core";
 
