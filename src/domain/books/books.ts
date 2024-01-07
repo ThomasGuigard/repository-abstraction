@@ -7,7 +7,7 @@ export class Books {
     this._items = books;
   }
 
-  get books(): Array<Book> {
+  get items(): Array<Book> {
     return this._items;
   }
 }

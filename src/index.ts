@@ -1,11 +1,14 @@
+import {getDependencies} from "./shared/dependency-injection";
+
 require('dotenv').config()
 
-import {dependencyInjection} from "./shared/dependency-injection";
 import {LibraryManager} from "./app/library-manager";
 
 const app = async (): Promise<void> => {
+  const dependencies = await getDependencies();
+
   const libraryManager = new LibraryManager(
-    dependencyInjection.bookRepository,
+    dependencies.bookRepository,
   );
 
   await libraryManager.addBookToLibrary({name: "Clean Code"});
@@ -16,7 +19,7 @@ const app = async (): Promise<void> => {
   console.log(`Here's your comic : ${hellblazer.name}`);
 
   const books = await libraryManager.getAllBooksFromLibrary();
-  console.table(books);
+  console.table(books.items);
 }
 
 app();
