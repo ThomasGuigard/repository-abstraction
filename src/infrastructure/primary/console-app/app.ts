@@ -1,5 +1,6 @@
 import {getDependencies} from "./dependency-injection";
 import {LibraryManager} from "../../../app/library-manager";
+import { faker } from '@faker-js/faker';
 
 const app = async (): Promise<void> => {
   const dependencies = await getDependencies();
@@ -8,12 +9,14 @@ const app = async (): Promise<void> => {
     dependencies.bookRepository,
   );
 
-  await libraryManager.addBookToLibrary({name: "Clean Code"});
-  await libraryManager.addBookToLibrary({name: "Hellblazer"});
-  await libraryManager.addBookToLibrary({name: "Ultimate Spider-Man"});
+  const firstBookName = faker.word.words();
 
-  const hellblazer = await libraryManager.getBookFromLibrary({name: "Hellblazer"});
-  console.log(`Here's your comic : ${hellblazer.name}`);
+  await libraryManager.addBookToLibrary({name: firstBookName});
+  await libraryManager.addBookToLibrary({name: faker.word.words()});
+  await libraryManager.addBookToLibrary({name: faker.word.words()});
+
+  const book = await libraryManager.getBookFromLibrary({name: firstBookName});
+  console.log(`Here's your book : ${book.name}`);
 
   const books = await libraryManager.getAllBooksFromLibrary();
   console.table(books.items);
